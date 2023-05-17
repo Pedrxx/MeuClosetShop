@@ -13,7 +13,7 @@ public class Hello {
 
     @GetMapping("/")
     public String sayHello() {
-        return "Ola mundo" + new Date();
+        return "Ola mundo " + new Date();
     }
     
 }
