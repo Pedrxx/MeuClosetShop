@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import meuclosetshop.backend.entity.Cidade;
-import meuclosetshop.backend.entity.Estado;
 import meuclosetshop.backend.repository.CidadeRepository;
-import meuclosetshop.backend.repository.EstadoRepository;
 
 @Service
 public class CidadeService {

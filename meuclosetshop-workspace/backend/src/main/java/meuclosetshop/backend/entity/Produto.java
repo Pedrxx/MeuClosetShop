@@ -13,17 +13,27 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
 
+
 @Entity
 @Data
-@Table(name = "cidade")
-public class Cidade {
-
+@Table(name = "produto")
+public class Produto {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    @Column(name = "nome")
-    private String nome;
+    @Column(name = "descCurta")
+    private String descCurta;
+
+    @Column(name = "descDetalhada")
+    private String descDetalhada;
+
+    @Column(name = "valorCusto")
+    private double valorCusto;
+
+    @Column(name = "valorVenda")
+    private double valorVenda;
 
     @Column(name = "dataCriacao")
     @Temporal(TemporalType.TIMESTAMP)
@@ -34,6 +44,8 @@ public class Cidade {
     private Date dataAtualizacao;
 
     @ManyToOne
-    private Estado estado;
+    private Marca marca;
 
+    @ManyToOne
+    private Categoria categoria;
 }

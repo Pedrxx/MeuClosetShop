@@ -1,6 +1,7 @@
 package meuclosetshop.backend.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -27,6 +28,11 @@ public class EstadoController {
     @GetMapping("/")
     public List<Estado> listarTodos() {
         return estadoService.listarTodos();
+    }
+
+    @GetMapping("/buscaId")
+    public Optional<Estado> buscaPorId(Long id) {
+        return estadoService.buscarPorId(id);
     }
 
     @PostMapping("/")

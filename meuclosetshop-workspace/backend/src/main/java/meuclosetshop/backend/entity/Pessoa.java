@@ -13,10 +13,11 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
 
+
 @Entity
 @Data
-@Table(name = "cidade")
-public class Cidade {
+@Table(name = "pessoa")
+public class Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +26,21 @@ public class Cidade {
     @Column(name = "nome")
     private String nome;
 
+    @Column(name = "cpf")
+    private String cpf;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "senha")
+    private String senha; 
+
+    @Column(name = "endereco")
+    private String endereco;
+
+    @Column(name = "cep")
+    private String cep;
+
     @Column(name = "dataCriacao")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
@@ -32,8 +48,7 @@ public class Cidade {
     @Column(name = "dataAtualizacao")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
-
+    
     @ManyToOne
-    private Estado estado;
-
+    private Cidade cidade;
 }

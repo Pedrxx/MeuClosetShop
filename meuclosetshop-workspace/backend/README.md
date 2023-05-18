@@ -6,3 +6,8 @@
 - [Springboot](https://start.spring.io/)
 
 ## Observações 
+
+* Ordem de criação 
+ -> Entity -> Repository -> Service -> Controller
+
+

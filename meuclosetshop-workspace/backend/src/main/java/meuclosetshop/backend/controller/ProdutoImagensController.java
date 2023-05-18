@@ -11,38 +11,39 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
-import meuclosetshop.backend.entity.Cidade;
-import meuclosetshop.backend.service.CidadeService;
+import meuclosetshop.backend.entity.ProdutoImagens;
+import meuclosetshop.backend.service.ProdutoImagensService;
 
-
+@RequestMapping("/produtosImagens")
 @RestController
-@RequestMapping("/cidade")
 @CrossOrigin
-public class CidadeController {
+public class ProdutoImagensController {
 
     @Autowired
-    private CidadeService cidadeService;
+    private ProdutoImagensService produtoImagensService;
 
     @GetMapping("/")
-    public List<Cidade> listarTodos() {
-        return cidadeService.listarTodos();
+    public List<ProdutoImagens> listarTodos() {
+        return produtoImagensService.listarTodos();
     }
 
     @PostMapping("/")
-    public Cidade inserir(@RequestBody Cidade cidade){
-        return cidadeService.inserir(cidade);
+    public ProdutoImagens inserir(@RequestParam Long id, @RequestParam MultipartFile file){
+        return produtoImagensService.inserir(id,file);
     }
 
     @PutMapping("/")
-    public Cidade alterar(@RequestBody Cidade cidade){
-        return cidadeService.atualizar(cidade);
+    public ProdutoImagens alterar(@RequestBody ProdutoImagens produtoImagens){
+        return produtoImagensService.atualizar(produtoImagens);
     }
 
     @DeleteMapping("/")
     public void exlcuir(@PathVariable("id") Long id) {
-        cidadeService.excluir(id);
+        produtoImagensService.excluir(id);
     }
     
 }

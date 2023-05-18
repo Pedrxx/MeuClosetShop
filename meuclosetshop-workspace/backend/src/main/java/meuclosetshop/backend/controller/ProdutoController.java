@@ -13,36 +13,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import meuclosetshop.backend.entity.Cidade;
-import meuclosetshop.backend.service.CidadeService;
+import meuclosetshop.backend.entity.Produto;
+import meuclosetshop.backend.service.ProdutoService;
 
-
+@RequestMapping("/produto")
 @RestController
-@RequestMapping("/cidade")
 @CrossOrigin
-public class CidadeController {
-
+public class ProdutoController {
+    
     @Autowired
-    private CidadeService cidadeService;
+    private ProdutoService produtoService;
 
+    
     @GetMapping("/")
-    public List<Cidade> listarTodos() {
-        return cidadeService.listarTodos();
+    public List<Produto> listarTodos() {
+        return produtoService.listarTodos();
     }
 
     @PostMapping("/")
-    public Cidade inserir(@RequestBody Cidade cidade){
-        return cidadeService.inserir(cidade);
+    public Produto inserir(@RequestBody Produto produto){
+        return produtoService.inserir(produto);
     }
 
     @PutMapping("/")
-    public Cidade alterar(@RequestBody Cidade cidade){
-        return cidadeService.atualizar(cidade);
+    public Produto alterar(@RequestBody Produto produto){
+        return produtoService.atualizar(produto);
     }
 
     @DeleteMapping("/")
     public void exlcuir(@PathVariable("id") Long id) {
-        cidadeService.excluir(id);
+        produtoService.excluir(id);
     }
-    
 }

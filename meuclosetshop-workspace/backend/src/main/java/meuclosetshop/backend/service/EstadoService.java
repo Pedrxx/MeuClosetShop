@@ -2,6 +2,7 @@ package meuclosetshop.backend.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,10 @@ public class EstadoService {
 
     public List<Estado> listarTodos() {
         return estadoRepository.findAll();
+    }
+
+    public Optional<Estado> buscarPorId(Long id) {
+        return estadoRepository.findById(id);
     }
 
     public Estado inserir(Estado estado) {
