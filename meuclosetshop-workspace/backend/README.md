@@ -7,6 +7,8 @@
 
 ## Observações 
 
+* http://localhost:8080/
+
 * Ordem de criação 
  -> Entity -> Repository -> Service -> Controller
 

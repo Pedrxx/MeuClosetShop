@@ -26,6 +26,9 @@ public class Estado {
 
     @Column(name = "sigla")
     private String sigla;
+    
+    @Column(name = "status")
+    private String status;
 
     @Column(name = "dataCriacao")
     @Temporal(TemporalType.TIMESTAMP)

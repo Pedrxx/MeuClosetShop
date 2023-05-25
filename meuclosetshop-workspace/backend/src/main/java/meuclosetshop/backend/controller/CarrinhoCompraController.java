@@ -11,39 +11,37 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
-import meuclosetshop.backend.entity.ProdutoImagens;
-import meuclosetshop.backend.service.ProdutoImagensService;
+import meuclosetshop.backend.entity.CarrinhoCompra;
+import meuclosetshop.backend.service.CarrinhoCompraService;
 
-@RequestMapping("/produtosImagens")
 @RestController
+@RequestMapping("/carrinhoCompra")
 @CrossOrigin
-public class ProdutoImagensController {
-
+public class CarrinhoCompraController {
+    
     @Autowired
-    private ProdutoImagensService produtoImagensService; 
+    CarrinhoCompraService carrinhoCompraService;
 
     @GetMapping("/")
-    public List<ProdutoImagens> listarTodos() {
-        return produtoImagensService.listarTodos();
+    public List<CarrinhoCompra> listarTodos() {
+        return carrinhoCompraService.listarTodos();
     }
 
     @PostMapping("/")
-    public ProdutoImagens inserir(@RequestParam Long id, @RequestParam MultipartFile file){
-        return produtoImagensService.inserir(id,file);
+    public CarrinhoCompra inserir(@RequestBody CarrinhoCompra carrinhoCompra){
+        return carrinhoCompraService.inserir(carrinhoCompra);
     }
 
     @PutMapping("/")
-    public ProdutoImagens alterar(@RequestBody ProdutoImagens produtoImagens){
-        return produtoImagensService.atualizar(produtoImagens);
+    public CarrinhoCompra alterar(@RequestBody CarrinhoCompra carrinhoCompra){
+        return carrinhoCompraService.atualizar(carrinhoCompra);
     }
 
     @DeleteMapping("/")
     public void exlcuir(@PathVariable("id") Long id) {
-        produtoImagensService.excluir(id);
+        carrinhoCompraService.excluir(id);
     }
     
 }

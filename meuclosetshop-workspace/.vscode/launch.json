@@ -2,6 +2,13 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"type": "java",
+			"name": "BackendApplication",
+			"request": "launch",
+			"mainClass": "meuclosetshop.backend.BackendApplication",
+			"projectName": "backend"
+		},
+		{
 			"type": "totvs_language_debug",
 			"request": "launch",
 			"name": "TOTVS Language Debug",

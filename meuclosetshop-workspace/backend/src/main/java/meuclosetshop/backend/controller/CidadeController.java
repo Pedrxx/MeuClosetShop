@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import meuclosetshop.backend.entity.Cidade;
@@ -33,6 +34,12 @@ public class CidadeController {
     @PostMapping("/")
     public Cidade inserir(@RequestBody Cidade cidade){
         return cidadeService.inserir(cidade);
+    }
+
+    @PostMapping("/importar-csv")
+    public String importarCSV(@RequestParam("caminhoArquivo") String caminhoArquivo) {
+        cidadeService.gravarDadosCSV(caminhoArquivo);
+        return "Dados do CSV importados com sucesso!";
     }
 
     @PutMapping("/")

@@ -6,6 +6,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
@@ -25,6 +26,12 @@ public class Cidade {
     @Column(name = "nome")
     private String nome;
 
+    @Column(name = "status")
+    private String status;
+    
+    @Column(name = "selecionada")
+    private String selecionada;
+    
     @Column(name = "dataCriacao")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
@@ -34,6 +41,7 @@ public class Cidade {
     private Date dataAtualizacao;
 
     @ManyToOne
+    @JoinColumn(name = "estado_id", referencedColumnName = "id")
     private Estado estado;
 
 }
