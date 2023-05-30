@@ -50,6 +50,7 @@ public class EstadoService {
     public void gravarDadosCSV(String caminhoArquivoCSV) {
         try (CSVReader reader = new CSVReader(new FileReader(caminhoArquivoCSV))) {
             String[] linha;
+            reader.readNext();
             while ((linha = reader.readNext()) != null) {
                 Estado estado = new Estado();
                 // estado.setId(linha[0]);

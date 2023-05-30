@@ -24,7 +24,7 @@ public class Estado {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "sigla")
+    @Column(name = "sigla", unique = true)
     private String sigla;
     
     @Column(name = "status")

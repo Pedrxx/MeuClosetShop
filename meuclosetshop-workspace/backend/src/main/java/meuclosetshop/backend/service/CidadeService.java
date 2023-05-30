@@ -22,6 +22,7 @@ public class CidadeService {
 
     @Autowired
     private CidadeRepository cidadeRepository;
+    @Autowired
     private EstadoRepository estadoRepository;
 
     public List<Cidade> listarTodos() {
@@ -48,16 +49,16 @@ public class CidadeService {
     public void gravarDadosCSV(String caminhoArquivoCSV) {
         try (CSVReader reader = new CSVReader(new FileReader(caminhoArquivoCSV))) {
             String[] linha;
+            reader.readNext();
             while ((linha = reader.readNext()) != null) {
-                Cidade cidade = new Cidade();
-                Estado estado = estadoRepository.findById(Long.parseLong(linha[3])).get();
-                
-                cidade.setNome(linha[1]);
-                cidade.setStatus(linha[2]);
-                cidade.setEstado(estado);
-                cidade.setSelecionada(linha[4]);
-                cidade.setDataCriacao(new Date());
-                cidadeRepository.save(cidade);
+                    Cidade cidade = new Cidade();
+                    Estado estado = estadoRepository.findById(Long.parseLong(linha[3])).get();
+                    cidade.setNome(linha[1]);
+                    cidade.setStatus(linha[2]);
+                    cidade.setEstado(estado);
+                    cidade.setSelecionada(linha[4]);
+                    cidade.setDataCriacao(new Date());
+                    cidadeRepository.save(cidade);
             }   
         } catch (IOException e) {
             // Tratar exceção de leitura do arquivo CSV

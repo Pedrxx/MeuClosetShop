@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import meuclosetshop.backend.dto.PessoaClienteRequestDTO;
 import meuclosetshop.backend.entity.Pessoa;
+import meuclosetshop.backend.repository.PermissaoRepository;
+import meuclosetshop.backend.repository.PessoaClienteRepository;
 import meuclosetshop.backend.repository.PessoaRepository;
 
 
@@ -14,7 +16,10 @@ import meuclosetshop.backend.repository.PessoaRepository;
 public class PessoaClienteService {
 
     @Autowired
-    private PessoaRepository pessoaRepository;
+    private PessoaClienteRepository pessoaRepository;
+
+    @Autowired
+    private PermissaoRepository permissaoRepository;
 
 
     public Pessoa registrar(PessoaClienteRequestDTO pessoaClienteRequestDTO) {
