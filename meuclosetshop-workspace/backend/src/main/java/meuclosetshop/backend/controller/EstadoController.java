@@ -1,5 +1,6 @@
 package meuclosetshop.backend.controller;
 
+//import java.io.Reader;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,6 +48,11 @@ public class EstadoController {
         estadoService.gravarDadosCSV(caminhoArquivo);
         return "Dados do CSV importados com sucesso!";
     }
+    // @PostMapping("/importar-csv")
+    // public String importarCSV(@RequestParam("caminhoArquivo") String caminhoArquivo) {
+    //     estadoService.gravarDadosCSV(caminhoArquivo);
+    //     return "Dados do CSV importados com sucesso!";
+    // }
 
     @PutMapping("/")
     public Estado alterar(@RequestBody Estado estado) {

@@ -39,9 +39,5 @@ public class PermissaoPessoa {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
 
-    public void setPessoa(Pessoa pessoa) {
-
-    }
-
     
 }

@@ -7,9 +7,7 @@ import org.springframework.stereotype.Service;
 
 import meuclosetshop.backend.dto.PessoaClienteRequestDTO;
 import meuclosetshop.backend.entity.Pessoa;
-import meuclosetshop.backend.repository.PermissaoRepository;
 import meuclosetshop.backend.repository.PessoaClienteRepository;
-import meuclosetshop.backend.repository.PessoaRepository;
 
 
 @Service
@@ -19,13 +17,13 @@ public class PessoaClienteService {
     private PessoaClienteRepository pessoaRepository;
 
     @Autowired
-    private PermissaoRepository permissaoRepository;
-
+    private PermissaoPessoaService permissaoPessoaService;
 
     public Pessoa registrar(PessoaClienteRequestDTO pessoaClienteRequestDTO) {
         Pessoa pessoa = new PessoaClienteRequestDTO().converter(pessoaClienteRequestDTO);
         pessoa.setDataCriacao(new Date());
         Pessoa pessoaNovo = pessoaRepository.saveAndFlush(pessoa);
+        permissaoPessoaService.vincularPermissaoPessoaCliente(pessoaNovo);
         return pessoaNovo;
     }
 

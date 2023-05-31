@@ -12,4 +12,6 @@
 * Ordem de criação 
  -> Entity -> Repository -> Service -> Controller
 
+* Comando no import.sql devem ser na mesma linha sempre
+
 

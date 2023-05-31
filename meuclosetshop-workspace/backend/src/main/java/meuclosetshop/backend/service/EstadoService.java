@@ -2,6 +2,7 @@ package meuclosetshop.backend.service;
 
 import java.io.FileReader;
 import java.io.IOException;
+// import java.io.Reader;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +10,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+// import com.opencsv.CSVParser;
+// import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
+// import com.opencsv.CSVReaderBuilder;
 
 import jakarta.transaction.Transactional;
 import meuclosetshop.backend.entity.Estado;
@@ -47,13 +51,16 @@ public class EstadoService {
     }
 
     @Transactional
-    public void gravarDadosCSV(String caminhoArquivoCSV) {
-        try (CSVReader reader = new CSVReader(new FileReader(caminhoArquivoCSV))) {
+    public void gravarDadosCSV(String caminhoArquivo) {
+        // CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
+        // try (CSVReader reader = new CSVReaderBuilder(caminhoArquivo)
+        // .withCSVParser(parser)
+        // .build();) {
+        try (CSVReader reader = new CSVReader(new FileReader(caminhoArquivo))) {
             String[] linha;
             reader.readNext();
             while ((linha = reader.readNext()) != null) {
                 Estado estado = new Estado();
-                // estado.setId(linha[0]);
                 estado.setNome(linha[1]);
                 estado.setSigla(linha[2]);
                 estado.setStatus(linha[3]);
