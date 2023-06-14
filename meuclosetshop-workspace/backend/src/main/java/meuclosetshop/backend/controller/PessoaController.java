@@ -26,6 +26,7 @@ public class PessoaController {
 
     @GetMapping("/")
     public List<Pessoa> listarTodos() {
+        // System.out.print(pessoaService.listarTodos());
         return pessoaService.listarTodos();
     }
 

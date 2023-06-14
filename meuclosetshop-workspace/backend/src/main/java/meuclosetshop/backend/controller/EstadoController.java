@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import jakarta.validation.Valid;
 import meuclosetshop.backend.entity.Estado;
 import meuclosetshop.backend.service.EstadoService;
 
@@ -39,7 +39,7 @@ public class EstadoController {
     }
 
     @PostMapping("/")
-    public Estado inserir(@RequestBody Estado estado) {
+    public Estado inserir(@Valid @RequestBody Estado estado) {
         return estadoService.inserir(estado);
     }
 

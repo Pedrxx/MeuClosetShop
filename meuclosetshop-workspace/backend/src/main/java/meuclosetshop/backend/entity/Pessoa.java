@@ -14,6 +14,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
@@ -28,21 +32,35 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull
     @Column(name = "nome")
     private String nome;
-
+    
+    @NotNull
+    @Pattern(regexp = "\\d{3}.\\d{3}.\\d{3}-\\d{2}", message = "Formato de CPF inválido")
     @Column(name = "cpf")
     private String cpf;
-
+    
+    @NotNull
+    @Email
     @Column(name = "email")
     private String email;
-
+    
+    @Size(min = 8, max = 20, message = "O campo deve ter entre 8 e 20 caracteres")
     @Column(name = "senha")
     private String senha; 
+
+    @Column(name = "cod_rec_senha")
+    private String codRecuperacaoSenha;
+
+    @Column(name = "dataEnvioCod")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataEnvioCod;
 
     @Column(name = "endereco")
     private String endereco;
 
+    @Pattern(regexp = "\\d{5}-\\d{3}", message = "Formato de CEP inválido")
     @Column(name = "cep")
     private String cep;
 

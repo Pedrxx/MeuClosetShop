@@ -10,6 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Entity
@@ -21,12 +23,16 @@ public class CarrinhoCompraProduto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @Pattern(regexp = "^\\d+(\\.\\d+)?$", message = "O campo deve conter um valor separado por ponto, caso necessário.")
     @Column(name = "valor")
     private double dataCompra;
 
+    @Pattern(regexp = "[0-9]+$", message = "O campo deve conter um valor")
     @Column(name = "quantidade")
     private double quantidade;
 
+    @NotNull
     @Column(name = "observacao")
     private String observacao;
 

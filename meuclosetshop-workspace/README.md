@@ -14,4 +14,6 @@
 
 * Comando no import.sql devem ser na mesma linha sempre
 
+* F1 -> Java: Clean (executar os dois) -> Java: Force Compilation
+
 

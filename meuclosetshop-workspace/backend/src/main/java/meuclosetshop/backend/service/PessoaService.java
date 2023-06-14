@@ -17,6 +17,7 @@ public class PessoaService {
     private PessoaRepository pessoaRepository;
 
     public List<Pessoa> listarTodos() {
+        // System.out.println(pessoaRepository.findAll());
         return pessoaRepository.findAll();
     }
 

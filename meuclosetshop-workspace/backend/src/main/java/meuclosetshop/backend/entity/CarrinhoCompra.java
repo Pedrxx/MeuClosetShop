@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
@@ -18,12 +19,15 @@ import lombok.Data;
 public class CarrinhoCompra {
     
     @Id
+    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @Column(name = "dataCompra")
     private Date dataCompra;
 
+    @NotNull
     @Column(name = "observacao")
     private String observacao;
 

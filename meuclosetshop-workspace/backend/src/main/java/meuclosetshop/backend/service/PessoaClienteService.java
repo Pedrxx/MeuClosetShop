@@ -29,7 +29,7 @@ public class PessoaClienteService {
         emailService.enviaEmail(
             pessoaNovo.getEmail(), 
             "Cadastro realizado com sucesso", 
-            "Olá "+pessoaNovo.getNome()+"! Seu cadastro no Meu Closet Shop foi realizado com sucesso! Boas compras!");
+            "Olá "+pessoaNovo.getNome() +" Seu cadastro no Meu Closet Shop foi realizado com sucesso! Boas compras!");
         return pessoaNovo;
     }
 

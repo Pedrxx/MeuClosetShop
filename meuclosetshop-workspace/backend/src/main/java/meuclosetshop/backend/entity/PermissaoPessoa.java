@@ -2,6 +2,8 @@ package meuclosetshop.backend.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,6 +27,7 @@ public class PermissaoPessoa {
 
     @ManyToOne
     @JoinColumn(name = "pessoa")
+    @JsonIgnore
     private Pessoa pessoa;
 
     @ManyToOne
