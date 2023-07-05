@@ -31,7 +31,6 @@ public class Cidade {
     private String nome;
 
     @NotNull
-
     @Size(min = 1, max = 1, message = "O campo deve ter apenas 1 caracter (A/I)")
     @Pattern(regexp = "^[IN]$", message = "O campo deve conter apenas 'I', para inativo, ou 'A', para ativo")
     @Column(name = "status")

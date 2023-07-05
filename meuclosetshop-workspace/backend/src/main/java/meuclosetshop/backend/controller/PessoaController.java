@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.websocket.server.PathParam;
 import meuclosetshop.backend.entity.Pessoa;
 import meuclosetshop.backend.service.PessoaService;
 
@@ -43,6 +45,22 @@ public class PessoaController {
     @DeleteMapping("/")
     public void exlcuir(@PathVariable("id") Long id) {
         pessoaService.excluir(id);
+    }
+
+    @GetMapping("/cidade/{idCidade}")
+    public List<Pessoa> buscarPessoasPorCidade(@PathVariable Long idCidade) {
+        return pessoaService.buscarPorIdCidade(idCidade);
+    }
+
+    @GetMapping("/cidade")
+    public List<Pessoa> buscarPessoasPorCidade(@RequestParam("nomeCidade") String nomeCidade) {
+        System.out.println(nomeCidade);
+        return pessoaService.buscarPorNomeCidade(nomeCidade);
+    }
+
+    @GetMapping("/estado")
+    public List<Pessoa> buscarPessoasPorEstado(@RequestParam("nomeEstado") String nomeEstado) {
+        return pessoaService.buscarPorNomeEstado(nomeEstado);
     }
     
 }

@@ -3,6 +3,8 @@ package meuclosetshop.backend.entity;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -46,13 +48,16 @@ public class Pessoa {
     @Column(name = "email")
     private String email;
     
+    @JsonIgnore
     @Size(min = 8, max = 20, message = "O campo deve ter entre 8 e 20 caracteres")
     @Column(name = "senha")
     private String senha; 
 
+    @JsonIgnore
     @Column(name = "cod_rec_senha")
     private String codRecuperacaoSenha;
 
+    @JsonIgnore
     @Column(name = "dataEnvioCod")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataEnvioCod;
@@ -64,17 +69,21 @@ public class Pessoa {
     @Column(name = "cep")
     private String cep;
 
+    @JsonIgnore
     @Column(name = "dataCriacao")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
     
+    @JsonIgnore
     @Column(name = "dataAtualizacao")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
     
+    // @JsonIgnore
     @ManyToOne
     private Cidade cidade;
 
+    // @JsonIgnore
     @OneToMany(mappedBy = "pessoa", orphanRemoval = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @Setter(value = AccessLevel.NONE)
     private List<PermissaoPessoa> permissaoPessoa;

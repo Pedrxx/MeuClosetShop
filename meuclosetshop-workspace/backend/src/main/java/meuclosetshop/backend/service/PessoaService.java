@@ -36,5 +36,17 @@ public class PessoaService {
         Pessoa pessoa = pessoaRepository.findById(id).get();
         pessoaRepository.delete(pessoa);
     }
+
+    public List<Pessoa> buscarPorIdCidade(Long idCidade) {
+        return pessoaRepository.findByIdCidade(idCidade);
+    }
+
+    public List<Pessoa> buscarPorNomeCidade(String nomeCidade) {
+        return pessoaRepository.findByNomeCidade(nomeCidade);
+    }
+
+    public List<Pessoa> buscarPorNomeEstado(String nomeEstado) {
+        return pessoaRepository.findByNomeEstado(nomeEstado);
+    }
     
 }
