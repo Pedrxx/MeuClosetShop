@@ -1,0 +1,189 @@
+/* @import url('https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'); */
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf') format('woff2');
+         /* url('') format('woff'); */
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.button {
+    font-size: 1.25rem;
+    color: #fff;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  
+  .button:focus,
+  .button:hover {
+    color: #fff;
+  }
+  
+  .button:focus:after,
+  .button:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  .button:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+  
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.img-meu-closet {
+    height: 6.25em;
+}
+
+.inicio {
+    min-width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    background-image: url("../images/public/IMG_2808.JPG");
+    background-position: center 30%;
+    background-size: cover; /* ou contain */
+    display: flex;
+    align-items: center; /* Alinhar verticalmente */
+    justify-content: center; /* Alinhar horizontalmente */
+    
+}
+
+.box-inicios {
+    justify-content: center;
+    /* height: 1vh; */
+    display: grid;
+}
+
+.text-inicio {
+    color: white;
+    font-size: 128px;
+    font-weight: bold;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.7);
+    padding: 0 180px 0 180px;
+}
+
+.button-inicio{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: 25px;
+}
+
+.conteudos {
+    display: flex;
+}
+
+.img-1 {
+    width: 50%;
+    font-size: 25px;
+    height: 638px;
+    background-image: url("../images/public/WhatsApp\ Image\ 2023-05-22\ at\ 13.50.45.jpeg");
+    background-position: center 10%;
+    filter: saturate(0);
+    transition: filter 0.5s ease; /* Transição suave da propriedade de filtro */
+
+}
+
+.img-2 {
+    width: 50%;
+    height: 638px;
+    font-size: 25px;  
+    background-image: url("../images/public/WhatsApp\ Image\ 2023-05-22\ at\ 19.49.41.jpeg");
+    background-position: center 50%;
+    filter: saturate(0);
+    transition: filter 0.5s ease; /* Transição suave da propriedade de filtro */
+
+
+}
+
+.img-1 .button,
+.img-2 .button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin: 10px;
+}
+
+.img-1:hover,
+.img-2:hover {
+    filter: saturate(1); /* Recupera a saturação no hover */
+}
+
+.new-in {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+
+}
+
+
+.new-in-text {
+    padding: 25px;
+    font-size: 36px;
+}
+
+
+.carousel {
+    margin-top: 20px;
+}
+
+.col-sm-6 {
+    width: 100%;
+}
+
+.img-container {
+    height: 547px;
+}
+
+.item .thumb {
+	width: 25%;
+	cursor: pointer;
+	float: left;
+}
+.item .thumb img {
+	width: 100%;
+	margin: 2px;
+}
+.item img {
+	width: 100%;	
+}
+
+.thumb {
+    height: 136px;
+}
+
+.col-sm-6 p {
+    font-size: 15px;
+    text-indent: 40px;
+}

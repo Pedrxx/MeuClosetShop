@@ -1,0 +1,159 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf') format('woff2');
+         /* url('') format('woff'); */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.login {
+    margin-top: 50px;
+    display: flex;
+    width: 1366px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    
+}
+
+.labels-logins {
+    display: inline;
+    justify-content: center;
+}
+
+.img-login {
+    display: flex;
+    justify-content: center;
+}
+
+.email {
+
+    padding-top: 25px;
+}
+
+.email-text {
+    font-size: 11px;
+    width: 332px;
+    padding: 0 16px 0 16px;
+}
+
+.email-label {
+    margin-top: 5px;
+    height: 32px;
+    width: 336px;
+    border-radius: 6px;
+    padding: 8px 8px 8px 8px;
+    background-color: #e5e5e5;
+    border: none;
+    outline: none;
+}
+
+.senha {
+    padding-top: 25px;
+}
+
+.senha-text {
+    font-size: 11px;
+    width: 332px;
+    padding: 0 16px 0 16px;
+}
+
+.senha-label {
+    margin-top: 5px;
+    height: 32px;
+    width: 336px;
+    border-radius: 6px;
+    padding: 8px 8px 8px 8px;
+    background-color: #e5e5e5;
+    border: none;
+    outline: none;
+}
+
+.login-options {
+    padding: 20px 20px 0 0;
+    display: flex;
+    justify-content: end;
+}
+
+.sign-in {
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-sign-in {
+    color: #e5e5e5;
+    background-color: #007AFF;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    display: flex;
+    width: 260px;
+    padding: 10px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+}
+
+.sign-in-google {
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-sign-in-google {
+    display: flex;
+    background-color: #333333;
+    color: #e5e5e5;
+    border-radius: 6px;
+    width: 260px;
+    padding: 10px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border: none;
+    outline: none;
+}
+
+.text-sign-in-google {
+    display: flex;
+    align-items: center;
+}
+
+.icon-google { 
+    padding-right: 5px;
+}
+
+.no-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+
+}
+
+.no-account-text {
+    padding-right: 5px;
+    font-size: 11px;
+
+}
+
+.forgot-password {
+    font-size: 11px;
+}
+
+.sign-up {
+    font-size: 11px;
+}
+
+.img-meu-closet {
+    width: 360px;
+}
